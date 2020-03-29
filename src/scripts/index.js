@@ -157,19 +157,19 @@
     this._clear = _clear;
   }
 
-  function _set(name, val) {
+   _set = (name, val) =>{
     return localStorage.setItem(name, val);
   }
 
-  function _get(name) {
+   _get = (name) => {
     return localStorage.getItem(name);
   }
 
-  function _remove(name) {
+   _remove = (name) =>{
     return localStorage.removeItem(name);
   }
 
-  function _clear() {
+   _clear = () => {
     return localStorage.clear();
   }
 
