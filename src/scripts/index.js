@@ -6,6 +6,10 @@
    * @{eo}
    *****/
   function $Cookies() {
+    if (!new.target) {
+      return $Cookies;
+    }
+
     this._get = _get;
     this._set = _set;
     this._clear = _clear;
