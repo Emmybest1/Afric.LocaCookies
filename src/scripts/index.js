@@ -80,6 +80,7 @@
               userName: form.userName.value,
               userAge: Number(form.userAge.value)
             };
+
             const date = new Date(3030, 0, 1);
 
             /**Now I am setting the @object{dataCollection} into the cookie store*/
@@ -97,6 +98,7 @@
                 expiry: date,
                 path: '/'
               });
+
               console.log('***Saved To Cookies Sucessfully***');
 
               form.reset();
@@ -157,21 +159,21 @@
     this._clear = _clear;
   }
 
-   _set = (name, val) =>{
+  _set = (name, val) => {
     return localStorage.setItem(name, val);
-  }
+  };
 
-   _get = (name) => {
+  _get = name => {
     return localStorage.getItem(name);
-  }
+  };
 
-   _remove = (name) =>{
+  _remove = name => {
     return localStorage.removeItem(name);
-  }
+  };
 
-   _clear = () => {
+  _clear = () => {
     return localStorage.clear();
-  }
+  };
 
   /*****
    *
