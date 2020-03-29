@@ -1,42 +1,47 @@
 (function() {
   /*****
    *
-   * @Cookies{Object} RESPONSIBLE FOR IMPLEMENTING THE COOKIES FUNCTIONALITIES
+   * @Cookies{function} RESPONSIBLE FOR IMPLEMENTING THE COOKIES FUNCTIONALITIES
    * holds all the function that implements the create,retrieve and  clear cookies
-   * @{eo} @{iamkate}
+   * @{eo}
    *****/
-  const Cookies = {
-    set: function(b, c, a) {
-      b = [encodeURIComponent(b) + '=' + encodeURIComponent(c)];
-      a &&
-        ('expiry' in a &&
-          ('number' == typeof a.expiry &&
-            (a.expiry = new Date(1e3 * a.expiry + +new Date())),
-          b.push('expires=' + a.expiry.toGMTString())),
-        'domain' in a && b.push('domain=' + a.domain),
-        'path' in a && b.push('path=' + a.path),
-        'secure' in a && a.secure && b.push('secure'));
-      document.cookie = b.join('; ');
-    },
-    get: function(b, c) {
-      for (
-        var a = [], e = document.cookie.split(/; */), d = 0;
-        d < e.length;
-        d++
-      ) {
-        var f = e[d].split('=');
-        f[0] == encodeURIComponent(b) &&
-          a.push(decodeURIComponent(f[1].replace(/\+/g, '%20')));
-      }
-      return c ? a : a[0];
-    },
-    clear: function(b, c) {
-      c || (c = {});
-      c.expiry = -86400;
-      this.set(b, '', c);
-    }
+  function $Cookies() {
+    this._get = _get;
+    this._set = _set;
+    this._clear = _clear;
+  }
+
+  _set = (b, c, a) => {
+    b = [encodeURIComponent(b) + '=' + encodeURIComponent(c)];
+    a &&
+      ('expiry' in a &&
+        ('number' == typeof a.expiry &&
+          (a.expiry = new Date(1e3 * a.expiry + +new Date())),
+        b.push('expires=' + a.expiry.toGMTString())),
+      'domain' in a && b.push('domain=' + a.domain),
+      'path' in a && b.push('path=' + a.path),
+      'secure' in a && a.secure && b.push('secure'));
+    document.cookie = b.join('; ');
   };
-  Object.freeze(Cookies);
+
+  _get = (b, c) => {
+    for (
+      var a = [], e = document.cookie.split(/; */), d = 0;
+      d < e.length;
+      d++
+    ) {
+      var f = e[d].split('=');
+      f[0] == encodeURIComponent(b) &&
+        a.push(decodeURIComponent(f[1].replace(/\+/g, '%20')));
+    }
+    return c ? a : a[0];
+  };
+
+  _clear = (b, c) => {
+    c || (c = {});
+    c.expiry = -86400;
+    _set(b, '', c);
+  };
 
   /*****
    *
@@ -52,11 +57,14 @@
       const form = document.querySelector('.cookiesForm');
       const okBtn = document.querySelector('.okBtn');
       const cookies = document.querySelector('.cookies');
-      /**
+
+      /**Instantiating the Cookies constructor */
+      const $cookies = new $Cookies();
+
+      /*****
        *
        * @function{*} Responsible for Saving Cookies
-       */
-
+       *****/
       okBtn.addEventListener('click', () => {
         cookies.classList.toggle('hideOkBtn');
 
@@ -71,17 +79,17 @@
             const date = new Date(3030, 0, 1);
 
             /**Now I am setting the @object{dataCollection} into the cookie store*/
-            const getUserName = Cookies.get('userName');
-            const getUserAge = Cookies.get('userAge');
+            const getUserName = $cookies._get('userName');
+            const getUserAge = $cookies._get('userAge');
             if (
               dataCollection.userName !== getUserName &&
               dataCollection.userAge !== getUserAge
             ) {
-              Cookies.set('userName', dataCollection.userName, {
+              $cookies._set('userName', dataCollection.userName, {
                 expiry: date,
                 path: '/'
               });
-              Cookies.set('userAge', dataCollection.userAge, {
+              $cookies._set('userAge', dataCollection.userAge, {
                 expiry: date,
                 path: '/'
               });
@@ -102,8 +110,8 @@
       const getCookies = () => {
         form.loadCookies.addEventListener('click', e => {
           e.preventDefault();
-          const getUserName = Cookies.get('userName');
-          const getUserAge = Cookies.get('userAge');
+          const getUserName = $cookies._get('userName');
+          const getUserAge = $cookies._get('userAge');
 
           form.userName.value = getUserName;
           form.userAge.value = getUserAge;
@@ -119,9 +127,8 @@
         const clearCookiesBtn = document.querySelector('.clearCookiesBtn');
 
         clearCookiesBtn.addEventListener('click', () => {
-          console.log('Testing');
-          Cookies.clear('userName', { path: '/' });
-          Cookies.clear('userAge', { path: '/' });
+          $cookies._clear('userName', { path: '/' });
+          $cookies._clear('userAge', { path: '/' });
         });
       };
       clearCookies();
