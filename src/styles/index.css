@@ -16,7 +16,10 @@ li {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/**Header Styling*/
+/*****
+ *
+ *Header Styling
+ *****/
 header {
   background: #fff;
   width: 100%;
@@ -124,10 +127,10 @@ sup {
   color: #017efc;
 }
 
-/*
+/*****
  *@{Styling Cookies div}
  *
- **/
+ *****/
 .cookies {
   width: 100%;
   height: 150px;
@@ -149,11 +152,11 @@ sup {
   margin-left: 2rem;
 }
 
-/*
+/*****
  *@{Styling clone}
  *
- **/
-div[href="https://github.com/Emmybest1/cookies.design.eo"] {
+ *****/
+div[href="https://github.com/Emmybest1/Afric.LocaCookies"] {
   width: 100%;
   height: 150px;
   background: #d87093;
@@ -168,10 +171,10 @@ div[href="https://github.com/Emmybest1/cookies.design.eo"] {
   border-top: solid 1px #000;
 }
 
-/* *
+/*****
  *
  *@{*}The styling below is for clear local storage + cookies & clone it button
- * */
+ *****/
 .clone,
 .clearCookiesBtn,
 .clearLocalStorageBtn {
@@ -182,12 +185,66 @@ div[href="https://github.com/Emmybest1/cookies.design.eo"] {
   cursor: pointer;
 }
 
-/**
+/*****
  *
  * @{*} The below style is for hiding the forms
- **/
+ *****/
 .hideCookiesForm,
 .hideLocalStorageForm,
 .hideOkBtn {
   display: none;
+}
+
+/*****
+ *
+ *@Media Query
+ *****/
+@media only screen and (max-width: 500px) {
+  .container {
+    overflow: hidden;
+  }
+
+  header ul li {
+    padding: 0 0.9rem;
+    cursor: pointer;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  input[type='submit'],
+  .localStorageForm input[type='submit'] {
+    width: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    padding: 0.6rem 1rem;
+    background: #ffc0cb;
+    outline: none;
+    color: #000;
+    cursor: pointer;
+    margin: 1rem auto;
+  }
+
+  div[href="https://github.com/Emmybest1/Afric.LocaCookies"] {
+    width: 100%;
+    height: 150px;
+    background: #d87093;
+    color: #000;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    box-sizing: border-box;
+    border-top: solid 1px #000;
+  }
+}
+@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 1400px) {
 }

@@ -1,10 +1,10 @@
 (function() {
-  /**
+  /*****
    *
    * @Cookies{Object} RESPONSIBLE FOR IMPLEMENTING THE COOKIES FUNCTIONALITIES
    * holds all the function that implements the create,retrieve and  clear cookies
    * @{eo} @{iamkate}
-   */
+   *****/
   const Cookies = {
     set: function(b, c, a) {
       b = [encodeURIComponent(b) + '=' + encodeURIComponent(c)];
@@ -38,17 +38,16 @@
   };
   Object.freeze(Cookies);
 
-  /**
-   *
+  /*****
    *
    * @function{*} Handles The Cookies Implementation
-   */
+   *****/
   const CookiesSection = () => {
-    /**
+    /*****
      *
      * @event{*} the functions and operations inside this document
      * event gets executed ones the Dom has successully loaded
-     */
+     *****/
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.querySelector('.cookiesForm');
       const okBtn = document.querySelector('.okBtn');
@@ -86,7 +85,7 @@
                 expiry: date,
                 path: '/'
               });
-              console.log('Saved To Cookies Sucessfully');
+              console.log('***Saved To Cookies Sucessfully***');
 
               form.reset();
             }
@@ -96,10 +95,10 @@
         saveCookies();
       });
 
-      /**
+      /*****
        *
        * @function{*} Responsible for Getting Cookies
-       */
+       *****/
       const getCookies = () => {
         form.loadCookies.addEventListener('click', e => {
           e.preventDefault();
@@ -112,10 +111,10 @@
       };
       getCookies();
 
-      /**
+      /*****
        *
        * @function{*} Responsible for Clearing Cookies
-       */
+       *****/
       const clearCookies = () => {
         const clearCookiesBtn = document.querySelector('.clearCookiesBtn');
 
@@ -131,12 +130,12 @@
   CookiesSection();
   /**End of Cookies Implementation */
 
-  /***
+  /*****
    *Begining of Local Storage Implementation
    *
    * @Local Storage{Construction} The below code base is
    * for construction the functionalities of local storage
-   */
+   *****/
   function $LocalStorage() {
     if (!new.target) {
       return $LocalStorage;
@@ -163,28 +162,28 @@
     return localStorage.clear();
   }
 
-  /**
-   *
+  /*****
    *
    * @function{*} Handles The Local Storage Implementation
-   */
+   *****/
   const LocalStorageSection = () => {
-    /**
-     *
+    /*****
      * @event{*} the functions and operations inside this document
      * event gets executed ones the Dom has successully loaded
-     */
+     *****/
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.querySelector('.localStorageForm');
 
-      /**The code is actually the execution of contructional function....
-       * People call it constructor instatiation,class instatiation */
+      /*****
+       * The code is actually the execution of contructional function....
+       * People call it constructor instatiation,class instatiation
+       *****/
       const $localStorage = new $LocalStorage();
 
-      /**
+      /*****
        *
        * @function{} THE BELOW FUNCTION IS RESPONSIBLE FOR SAVING DATA TO LOCAL STORAGE
-       */
+       *****/
       const saveToLocalStorage = () => {
         form.saveToLocalStorage.addEventListener('click', e => {
           e.preventDefault();
@@ -195,16 +194,16 @@
 
           $localStorage._set('userName', dataCollection.userName);
           $localStorage._set('userAge', dataCollection.userAge);
-
-          console.log('****SAVED TO LOCAL STORAGE SUCCESSFULLY****');
+          console.log('***Saved To Local Storage Sucessfully***');
+          form.reset();
         });
       };
       saveToLocalStorage();
 
-      /**
+      /*****
        *
        * @function{} THE BELOW FUNCTION IS RESPONSIBLE FOR GETTING DATA FROM LOCAL STORAGE
-       */
+       *****/
       const getFromLocalStorage = () => {
         form.loadFromLocalStorage.addEventListener('click', e => {
           e.preventDefault();
@@ -214,10 +213,10 @@
       };
       getFromLocalStorage();
 
-      /**
+      /*****
        *
        * @function{} THE BELOW FUNCTION IS RESPONSIBLE FOR CLEARING LOCAL STORAGE
-       */
+       *****/
       const clearLocalStorage = () => {
         const clearLocalStorageBtn = document.querySelector(
           '.clearLocalStorageBtn'
