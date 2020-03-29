@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cookie App | Home</title>
+    <link rel="stylesheet" href="../src/styles/index.css" />
+    <link rel="icon" href="../src/img/logo.png" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h4>AfricLite</h4>
+        <ul>
+          <li id="cookiesBtn">Cookies</li>
+          <li id="localStorageBtn">Local Storage</li>
+        </ul>
+      </header>
+      <!-- 
+        *
+        *@{*} The below form is for Cookies
+        *
+       -->
+      <form class="cookiesForm">
+        <h3>Cookies</h3>
+        <span>name</span>
+        <input type="text" name="userName" class="userName" />
+        <span>age</span>
+        <input type="text" name="userAge" class="age" />
+        <input
+          type="submit"
+          name="saveCookies"
+          value="Save Cookies"
+          class="btn"
+        />
+        <input
+          type="submit"
+          name="loadCookies"
+          value="Load Cookies"
+          class="btn"
+        />
+      </form>
+
+      <!-- 
+        *
+        *@{*} The below form is for Cookies
+        *
+       -->
+      <form class="localStorageForm hideLocalStorageForm">
+        <h3>Local Storage</h3>
+        <span>name</span>
+        <input type="text" name="userName" class="userName" />
+        <span>age</span>
+        <input type="text" name="userAge" class="age" />
+        <input
+          type="submit"
+          name="saveToLocalStorage"
+          value="Save To Local Storage"
+          class="btn"
+        />
+        <input
+          type="submit"
+          name="loadFromLocalStorage"
+          value="Load Local Storage"
+          class="btn"
+        />
+      </form>
+
+      <h3 class="africLite"><sup>***</sup> AfricLite<sub>***</sub></h3>
+      <p class="output"></p>
+
+      <div class="cookies">
+        <p>
+          We use cookies in this application,click ok to accept
+          <span class="okBtn">Ok</span>
+        </p>
+      </div>
+
+      <div href="https://github.com/Emmybest1/cookies.design.eo">
+      <a href="https://github.com/Emmybest1/cookies.design.eo" target="_blank">
+        <span class="clone">Clone it</span></a
+      >
+      <button class="clearCookiesBtn">Clear Cookies</button>
+      <button class="clearLocalStorageBtn">Clear Local Storage</button>
+    </div>
+  </div>
+
+    <noscript
+      >Please turn on your javascript from your browser to continue using this
+      application thank you.</noscript
+    >
+    <script src="../src/scripts/index.js"></script>
+    <script src="../src/scripts/handlingUiDisplays.js"></script>
+  </body>
+</html>

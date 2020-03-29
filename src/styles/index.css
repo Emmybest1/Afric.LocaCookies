@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/**Header Styling*/
+header {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4rem;
+  color: #000;
+  font-size: 0.9rem;
+  border-bottom: solid 1px #000;
+}
+
+header ul {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+header ul li {
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+header ul li:hover {
+  color: #017efc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 4rem auto;
+  border: solid 1px #ffc0cb;
+  padding: 1rem;
+}
+
+.localStorageForm {
+  border: solid 1px #017efc;
+}
+
+input:not(.btn) {
+  padding: 0.6rem 1rem 0.6rem 0.1rem;
+  width: 80%;
+  border: none;
+  border-bottom: solid 1px #d87093;
+  outline: none;
+}
+
+.localStorageForm input:not(.btn) {
+  padding: 0.6rem 1rem 0.6rem 0.1rem;
+  width: 80%;
+  border: none;
+  border-bottom: solid 1px #017efc;
+  outline: none;
+}
+
+input[type='submit'] {
+  width: 30%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  padding: 0.6rem 1rem;
+  background: #ffc0cb;
+  outline: none;
+  color: #000;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.localStorageForm input[type='submit'] {
+  width: 30%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  padding: 0.6rem 1rem;
+  background: #017efc;
+  outline: none;
+  color: #000;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+input[type='submit']:hover {
+  background: #ffa500;
+}
+
+h3 {
+  color: #d87093;
+  text-align: center;
+}
+
+span {
+  font-size: 0.9rem;
+}
+
+.africLite {
+  font-size: 0.9rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #000;
+}
+
+sub,
+sup {
+  color: #017efc;
+}
+
+/*
+ *@{Styling Cookies div}
+ *
+ **/
+.cookies {
+  width: 100%;
+  height: 150px;
+  background: #017efc;
+  color: #000;
+  font-size: 0.9rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+.okBtn {
+  padding: 0.5rem 1rem;
+  background: #d87093;
+  border: none;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+/*
+ *@{Styling clone}
+ *
+ **/
+div[href="https://github.com/Emmybest1/cookies.design.eo"] {
+  width: 100%;
+  height: 150px;
+  background: #d87093;
+  color: #000;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  border-top: solid 1px #000;
+}
+
+/* *
+ *
+ *@{*}The styling below is for clear local storage + cookies & clone it button
+ * */
+.clone,
+.clearCookiesBtn,
+.clearLocalStorageBtn {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #017efc;
+  border: none;
+  cursor: pointer;
+}
+
+/**
+ *
+ * @{*} The below style is for hiding the forms
+ **/
+.hideCookiesForm,
+.hideLocalStorageForm,
+.hideOkBtn {
+  display: none;
+}
