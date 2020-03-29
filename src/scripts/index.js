@@ -1,5 +1,3 @@
-
-
 (function() {
   /**
    *
@@ -212,8 +210,6 @@
           e.preventDefault();
           form.userName.value = $localStorage._get('userName');
           form.userAge.value = $localStorage._get('userAge');
-
-          console.log($localStorage._get('userAge'));
         });
       };
       getFromLocalStorage();
@@ -228,7 +224,7 @@
         );
 
         clearLocalStorageBtn.addEventListener('click', () => {
-          $localStorage.clear();
+          $localStorage._clear();
         });
       };
       clearLocalStorage();
