@@ -21,13 +21,12 @@ li {
  *Header Styling
  *****/
 header {
-  background: #fff;
+  background: #eee;
   width: 100%;
   box-sizing: border-box;
   padding: 4rem;
   color: #000;
   font-size: 0.9rem;
-  border-bottom: solid 1px #000;
 }
 
 header ul {
@@ -51,19 +50,21 @@ form {
   flex-direction: column;
   width: 50%;
   margin: 4rem auto;
-  border: solid 1px #ffc0cb;
+  border: solid 1px #eee;
+  border-radius: 0.3rem;
+  background: #eee;
   padding: 1rem;
 }
 
 .localStorageForm {
-  border: solid 1px #017efc;
+  border: solid 1px #eee;
 }
 
 input:not(.btn) {
   padding: 0.6rem 1rem 0.6rem 0.1rem;
   width: 80%;
   border: none;
-  border-bottom: solid 1px #d87093;
+  border-bottom: none;
   outline: none;
 }
 
@@ -71,7 +72,7 @@ input:not(.btn) {
   padding: 0.6rem 1rem 0.6rem 0.1rem;
   width: 80%;
   border: none;
-  border-bottom: solid 1px #017efc;
+  border-bottom: none;
   outline: none;
 }
 
@@ -82,9 +83,9 @@ input[type='submit'] {
   -moz-appearance: none;
   -o-appearance: none;
   padding: 0.6rem 1rem;
-  background: #ffc0cb;
+  background: #000;
   outline: none;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   margin: 1rem 0;
 }
@@ -96,19 +97,19 @@ input[type='submit'] {
   -moz-appearance: none;
   -o-appearance: none;
   padding: 0.6rem 1rem;
-  background: #017efc;
+  background: #000;
   outline: none;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   margin: 1rem 0;
 }
 
 input[type='submit']:hover {
-  background: #ffa500;
+  background: #017efc;
 }
 
 h3 {
-  color: #d87093;
+  color: #000;
   text-align: center;
 }
 
@@ -133,7 +134,7 @@ sup {
 .cookies {
   width: 100%;
   height: 150px;
-  background: #017efc;
+  background: #eee;
   color: #000;
   font-size: 0.9rem;
   display: flex;
@@ -145,7 +146,7 @@ sup {
 
 .okBtn {
   padding: 0.5rem 1rem;
-  background: #d87093;
+  background: #017efc;
   border: none;
   cursor: pointer;
   margin-left: 2rem;
@@ -167,7 +168,6 @@ div[href="https://github.com/Emmybest1/Afric.LocaCookies"] {
   align-items: center;
   padding-left: 1rem;
   box-sizing: border-box;
-  border-top: solid 1px #000;
 }
 
 /*****
